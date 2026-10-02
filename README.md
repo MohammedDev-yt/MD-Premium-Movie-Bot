@@ -1,5 +1,3 @@
-
-
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:6A00FF,100:00C8FF&height=180&section=header&text=PREMIUM%20MOVIE%20BOT&fontSize=35&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Developed%20By%20Mohammed&descAlignY=60&descSize=16" width="100%">
 </p>
@@ -244,6 +242,208 @@ Your Render application must have a working HTTP health endpoint.
 UptimeRobot monitoring does not guarantee uninterrupted uptime.
 
 ---
+
+
+### — 「 DEPLOY ON KOYEB 」 —
+
+<p align="center">
+  <a href="https://app.koyeb.com/">
+    <img src="https://img.shields.io/badge/🚀%20DEPLOY%20ON%20KOYEB-000000?style=for-the-badge&logo=koyeb&logoColor=white">
+  </a>
+</p>
+
+### Koyeb Deployment Steps
+
+1. Fork this repository.
+2. Open [Koyeb](https://app.koyeb.com/).
+3. Sign in with your GitHub account.
+4. Click Create App.
+5. Select GitHub as deployment source.
+6. Choose your Premium Movie Bot repository.
+7. Select Docker deployment.
+8. Configure your environment variables.
+9. Click Deploy.
+
+### Koyeb Requirements
+
+- Runtime: Docker
+- Deployment: Web Service
+- Dockerfile: Required
+- Environment Variables: Required
+- MongoDB: Required
+
+**Note:** Koyeb availability, free-tier eligibility and resource limits depend on its current plans. A successful deployment does not guarantee 24/7 operation on every plan.
+
+
+
+---
+
+## 🖥️ DEPLOY ON VPS
+
+You can deploy Premium Movie Bot on any Linux VPS.
+
+### Requirements
+
+- Ubuntu 22.04 / 24.04
+- Python 3.11
+- Git
+- MongoDB URI
+- Telegram Bot Token
+
+### VPS Deployment Steps
+
+```bash
+# Update packages
+sudo apt update && sudo apt upgrade -y
+
+# Install required packages
+sudo apt install git python3 python3-pip python3-venv -y
+
+# Clone repository
+git clone YOUR_REPOSITORY_URL
+
+# Enter repository
+cd premium-movie-bot
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Install requirements
+pip install -r requirements.txt
+
+# Run bot
+python main.py
+```
+
+### Keep Bot Running 24/7
+
+Install Screen:
+
+```bash
+sudo apt install screen -y
+```
+
+Create a screen session:
+
+```bash
+screen -S premium-movie-bot
+```
+
+Run the bot:
+
+```bash
+python main.py
+```
+
+Detach screen:
+
+```text
+CTRL + A
+D
+```
+
+Reopen screen:
+
+```bash
+screen -r premium-movie-bot
+```
+
+---
+
+## 💻 RUN LOCALLY
+
+You can also run Premium Movie Bot directly on your computer.
+
+### Requirements
+
+- Python 3.11
+- Git
+- MongoDB URI
+- Telegram Bot Token
+
+### Windows Deployment
+
+**Step 1: Clone Repository**
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+**Step 2: Open Project Folder**
+
+```bash
+cd premium-movie-bot
+```
+
+**Step 3: Create Virtual Environment**
+
+```bash
+python -m venv venv
+```
+
+**Step 4: Activate Virtual Environment**
+
+```bash
+venv\Scripts\activate
+```
+
+**Step 5: Install Requirements**
+
+```bash
+pip install -r requirements.txt
+```
+
+**Step 6: Configure Environment Variables**
+
+Create a `.env` file and add your required credentials.
+
+**Step 7: Start Bot**
+
+```bash
+python main.py
+```
+
+### Linux / Termux Deployment
+
+```bash
+# Update packages
+pkg update && pkg upgrade -y
+
+# Install Python and Git
+pkg install python git -y
+
+# Clone repository
+git clone YOUR_REPOSITORY_URL
+
+# Enter directory
+cd premium-movie-bot
+
+# Install requirements
+pip install -r requirements.txt
+
+# Start bot
+python main.py
+```
+
+**Note:** Local deployment runs only while your device is powered on and the bot process remains active.
+
+---
+
+## 📌 Deployment Summary
+
+| Platform | Deployment | 24/7 Support |
+|---|---|---|
+| Render | Docker / Web Service | Depends on plan |
+| Koyeb | Docker / Web Service | Depends on plan |
+| VPS | Python / Docker | Yes, with proper setup |
+| Local Windows | Python | While running |
+| Linux | Python | While running |
+| Termux | Python | While device is active |
+
+
 
 ## 🗄️ Database Information
 
