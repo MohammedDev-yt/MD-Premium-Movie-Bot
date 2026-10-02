@@ -60,7 +60,6 @@ def register_share_handlers(app):
                 ]
             )
         )
-
 # ------------------------ #
 # Don't Remove My Credits
 # Owner: @Mr_Mohammed_29
