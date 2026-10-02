@@ -26,7 +26,7 @@
 
 #Structure Of Repo 
 
-MD-Premium-Movie-Bot/
+```MD-Premium-Movie-Bot/
 │
 ├── handlers/
 │   ├── access.py
@@ -58,7 +58,7 @@ MD-Premium-Movie-Bot/
 ├── render.yml
 ├── requirements.txt
 └── search.py
-
+```
 
 ## ✨ Features
 
