@@ -10,7 +10,9 @@
   <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/issues"><img src="https://img.shields.io/github/issues/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=7c3aed&logoColor=white" alt="Issues"/></a>
   <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/pulls"><img src="https://img.shields.io/github/issues-pr/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=ec4899&logoColor=white" alt="Pull Requests"/></a>
   <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/commits"><img src="https://img.shields.io/github/last-commit/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=6366f1&logoColor=white" alt="Last Commit"/></a>
-  <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=mit&color=22c55e&logoColor=white" alt="License"/></a>
+  <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/blob/main/LICENSE">
+  <img src="https://img.shields.io/github/license/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=mit&color=22c55e&logoColor=white" alt="License"/>
+</a>
 
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11"/>
