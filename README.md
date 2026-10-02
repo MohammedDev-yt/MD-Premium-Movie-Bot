@@ -1,20 +1,15 @@
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:6A00FF,100:00C8FF&height=180&section=header&text=PREMIUM%20MOVIE%20BOT&fontSize=35&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Developed%20By%20Mohammed&descAlignY=60&descSize=16" width="100%">
 </p>
-<p align="center">
-  <b>Bot is Made By Mohammed</b>
-</p>
-
-
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=36BCF7F1&width=435&lines=Welcome+To+Premium+Movie+Bot;Your+Ultimate+Movie+Search+Bot;Premium+Movie+Delivery+System;Bot+is+Made+By+Mohammed)](https://git.io/typing-svg)
 
 <p align="center">
-  <a href="https://github.com/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot/stargazers"><img src="https://img.shields.io/github/stars/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot?style=for-the-badge&logo=github&color=f43f8e&logoColor=white" alt="Stars"/></a>
-  <a href="https://github.com/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot/network/members"><img src="https://img.shields.io/github/forks/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot?style=for-the-badge&logo=github&color=a855f7&logoColor=white" alt="Forks"/></a>
-  <a href="https://github.com/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot/issues"><img src="https://img.shields.io/github/issues/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot?style=for-the-badge&logo=github&color=7c3aed&logoColor=white" alt="Issues"/></a>
-  <a href="https://github.com/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot/pulls"><img src="https://img.shields.io/github/issues-pr/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot?style=for-the-badge&logo=github&color=ec4899&logoColor=white" alt="Pull Requests"/></a>
-  <a href="https://github.com/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot/commits"><img src="https://img.shields.io/github/last-commit/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot?style=for-the-badge&logo=github&color=6366f1&logoColor=white" alt="Last Commit"/></a>
-  <a href="https://github.com/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ichigo-Kurosaki-bots/Ichigo_premium_movie_bot?style=for-the-badge&logo=mit&color=22c55e&logoColor=white" alt="License"/></a>
+  <a href="https://github.com/s/MohammedDev-yt/MD-Premium-Movie-Bot/stargazers"><img src="https://img.shields.io/github/stars/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=f43f8e&logoColor=white" alt="Stars"/></a>
+  <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/network/members"><img src="https://img.shields.io/github/forks/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=a855f7&logoColor=white" alt="Forks"/></a>
+  <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/issues"><img src="https://img.shields.io/github/issues/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=7c3aed&logoColor=white" alt="Issues"/></a>
+  <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/pulls"><img src="https://img.shields.io/github/issues-pr/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=ec4899&logoColor=white" alt="Pull Requests"/></a>
+  <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/commits"><img src="https://img.shields.io/github/last-commit/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=github&color=6366f1&logoColor=white" alt="Last Commit"/></a>
+  <a href="https://github.com/MohammedDev-yt/MD-Premium-Movie-Bot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/MohammedDev-yt/MD-Premium-Movie-Bot?style=for-the-badge&logo=mit&color=22c55e&logoColor=white" alt="License"/></a>
 
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11"/>
@@ -32,23 +27,6 @@
     <img src="https://img.shields.io/badge/Updates-Aero_Unity-blueviolet?style=for-the-badge&logo=telegram&logoColor=white" alt="Updates"/>
   </a>
 </p>
-
-<p align="center">
-  <a href="https://t.me/Premium_ovies_bot">
-    <img src="https://img.shields.io/badge/TELEGRAM-OPEN%20BOT-0088CC?style=for-the-badge&logo=telegram">
-  </a>
-  <a href="https://t.me/Aero_Unity">
-    <img src="https://img.shields.io/badge/UPDATES-AERO%20UNITY-blueviolet?style=for-the-badge&logo=telegram">
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/PYTHON-3.11-blue?style=flat-square&logo=python">
-  <img src="https://img.shields.io/badge/FRAMEWORK-PYROGRAM-purple?style=flat-square">
-  <img src="https://img.shields.io/badge/DATABASE-MONGODB-green?style=flat-square&logo=mongodb">
-  <img src="https://img.shields.io/badge/DEPLOY-RENDER-6A00FF?style=flat-square&logo=render">
-</p>
-
 ---
 
 ## Structure Of Repo
