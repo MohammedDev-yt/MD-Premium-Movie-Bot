@@ -24,6 +24,42 @@
 
 ---
 
+#Structure Of Repo 
+
+MD-Premium-Movie-Bot/
+│
+├── handlers/
+│   ├── access.py
+│   ├── admin.py
+│   ├── channel.py
+│   ├── font.py
+│   ├── fsub.py
+│   ├── group_welcome.py
+│   ├── owner.py
+│   ├── permanent_links.py
+│   ├── premium.py
+│   ├── redeem.py
+│   ├── search.py
+│   ├── share.py
+│   ├── start.py
+│   ├── system.py
+│   ├── telegraph.py
+│   └── tokens.py
+│
+├── utils/
+│   └── buttons.py
+│
+├── Dockerfile
+├── bot.py
+├── config.py
+├── database.py
+├── indexer.py
+├── premium.py
+├── render.yml
+├── requirements.txt
+└── search.py
+
+
 ## ✨ Features
 
 - 🎬 Movie search and media delivery
