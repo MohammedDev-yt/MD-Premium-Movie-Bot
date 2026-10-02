@@ -1,0 +1,56 @@
+services:
+  - type: web
+    name: md-premium-movie-bot
+    runtime: docker
+
+    plan: free
+
+    dockerfilePath: ./Dockerfile
+
+    healthCheckPath: /health
+
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+
+      - key: API_ID
+        sync: false
+
+      - key: API_HASH
+        sync: false
+
+      - key: DATABASE_CHANNEL_ID
+        sync: false
+
+      - key: OWNER_ID
+        sync: false
+
+      - key: ADMIN_IDS
+        sync: false
+
+      - key: MONGO_URI
+        sync: false
+
+      - key: DB_NAME
+        value: premium_movie_bot
+
+      - key: BOT_USERNAME
+        sync: false
+
+      - key: UPDATES_CHANNEL
+        sync: false
+
+      - key: RESULTS_PER_PAGE
+        value: "10"
+
+      - key: MAX_RESULTS
+        value: "50"
+
+      - key: DELETE_AFTER
+        value: "0"
+
+      - key: INDEX_BATCH_SIZE
+        value: "100"
+
+      - key: LOG_LEVEL
+        value: "INFO"
