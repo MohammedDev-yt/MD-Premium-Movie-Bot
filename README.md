@@ -205,7 +205,7 @@ Use these settings while deploying on Render:
 
 - Runtime: `Docker`
 - Build Command: `pip install -r requirements.txt`
-- Start Command: `python main.py`
+- Start Command: `python bot.py`
 
 ---
 
@@ -335,7 +335,7 @@ screen -S premium-movie-bot
 Run the bot:
 
 ```bash
-python main.py
+python bot.py
 ```
 
 Detach screen:
@@ -403,7 +403,7 @@ Create a `.env` file and add your required credentials.
 **Step 7: Start Bot**
 
 ```bash
-python main.py
+python bot.py
 ```
 
 ### Linux / Termux Deployment
@@ -425,7 +425,7 @@ cd premium-movie-bot
 pip install -r requirements.txt
 
 # Start bot
-python main.py
+python bot.py
 ```
 
 **Note:** Local deployment runs only while your device is powered on and the bot process remains active.
