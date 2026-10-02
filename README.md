@@ -24,9 +24,9 @@
 
 ---
 
-#Structure Of Repo 
-
-```MD-Premium-Movie-Bot/
+## Structure Of Repo
+```
+MD-Premium-Movie-Bot/
 │
 ├── handlers/
 │   ├── access.py
@@ -95,7 +95,7 @@
 
 ## ✨ Commands
 
-### 👤 User Commands
+### 👤 User & Owner Commands
 
 ```text
 start - Start the bot
@@ -112,11 +112,6 @@ myplan - Check my Premium plan
 id - Show my Telegram ID
 font - Change the text
 trendlist - Get top trending search list
-```
-
-### 👑 Owner Commands
-
-```text
 plink - Generate Permanent Links For Media [Owner only]
 pbatch - Generate Permanent Batch Link For Multiple Files [Owner only]
 batch - Create Batch Links For Media [Owner only]
@@ -351,7 +346,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Run bot
-python main.py
+python bot.py
 ```
 
 ### Keep Bot Running 24/7
@@ -531,6 +526,9 @@ If you like this bot, give it a ⭐ on GitHub to support the project!
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:6A00FF,100:00C8FF&height=120&section=footer"/>
 </p>
 
+
 <p align="center">
   <b>Made with ❤️ by Mohammed</b>
+  <br>
+  📩 Contact: <a href="https://t.me/Mr_Mohammed_29">Mohammed</a>
 </p>
