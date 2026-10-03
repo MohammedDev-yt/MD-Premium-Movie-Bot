@@ -31,7 +31,7 @@
   </a>
 </p>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ## ✨ Features
 
@@ -64,7 +64,7 @@
 - 🟢 24/7 uptime monitoring support
 - 📂 MongoDB powered storage
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ## ✨ Commands
 
@@ -119,7 +119,7 @@ reload - Reload the configuration [Owner only]
 optimize - Optimize database [Owner only]
 ```
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <details>
 <summary><h2>🛠️ Development</h2></summary>
@@ -128,9 +128,9 @@ Welcome to the development documentation of **MD Premium Movie Bot**.
 
 This section contains the repository structure, environment configuration, database information, installation instructions, and deployment methods.
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## 📁 Structure Of Repo
+>[!STRUCTURE]
 
 ```text
 MD-Premium-Movie-Bot/
@@ -168,7 +168,7 @@ MD-Premium-Movie-Bot/
 └── search.py
 ```
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ## ⚙️ Environment Variables
 
@@ -225,11 +225,15 @@ UPDATES_CHANNEL=Aero_Unity
 UPDATES_URL=https://t.me/Aero_Unity
 ```
 
-⚠️ Never publish your actual credentials on GitHub.
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
+> [!NOTE]
+
+> ⚠️ Never publish your actual credentials on GitHub.
 
 </details>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ## 🚀 DEPLOYMENT
 
