@@ -238,7 +238,7 @@ UPDATES_URL=https://t.me/Aero_Unity
   </a>
 </p>
 
-> [!TIP]
+> [!TIP] 
 > 1. Fork this repository.
 > 2. Open Render.
 > 3. Click New +.
@@ -247,31 +247,16 @@ UPDATES_URL=https://t.me/Aero_Unity
 > 6. Configure the settings below.
 > 7. Add environment variables.
 > 8. Click Deploy Web Service.
-> **Use these settings while deploying on Render:**
+> Use these settings while deploying on Render
 > - Runtime: `Docker`
 > - Build Command: `pip install -r requirements.txt`
 > - Start Command: `python bot.py`
 > **Keep Bot Alive 24/7 Using UptimeRobot**
 > **Go to**: https://uptimerobot.com/
 > Click: **Add New Monitor**
-> Use these settings 👇
-> | Setting | Value |
-> |---|---|
-> | Monitor Type | HTTP(s) |
-> | Friendly Name | Premium-Movie-Bot |
-> | URL (or IP) | Your Render App URL |
-> | Monitoring Interval | Every 5 minutes |
-> | Monitor Timeout | 1 second |
-> URL
-
-```text
-https://your-render-app.onrender.com
-```
 > After adding monitor click: **Create Monitor**
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-> [!IMPORTANT]
+> [!IMPORTANT] 
 > Your Render application must have a working HTTP health endpoint.
 > UptimeRobot monitoring does not guarantee uninterrupted uptime.
 
@@ -283,7 +268,7 @@ https://your-render-app.onrender.com
   </a>
 </p>
 
-> [!TIP]
+> [!TIP] 
 > 1. Fork this repository.
 > 2. Open [Koyeb](https://app.koyeb.com/).
 > 3. Sign in with your GitHub account.
@@ -300,9 +285,7 @@ https://your-render-app.onrender.com
 > - Environment Variables: Required
 > - MongoDB: Required
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-> [!NOTE]
+> [!NOTE] 
 > Koyeb availability, free-tier eligibility and resource limits depend on its current plans.
 > A successful deployment does not guarantee 24/7 operation on every plan.
 
@@ -457,7 +440,7 @@ pip install -r requirements.txt
 python bot.py
 ```
 
-> [!NOTE]
+> [!NOTE] 
 > Local deployment runs only while your device is powered on and the bot process remains active.
 
 ## 📌 Deployment Summary
@@ -473,7 +456,7 @@ python bot.py
 
 </details>
 
-> [!CAUTION]
+> [!CAUTION] 
 > - Never share your BOT_TOKEN.
 > - Keep API_HASH private.
 > - Never expose MONGO_URI.
@@ -483,7 +466,7 @@ python bot.py
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-> [!WARNING]
+> [!WARNING] 
 > **DON'T REMOVE MY CREDIT...**
 > - Developer: [MOHAMMED](https://github.com/MohammedDev-yt)
 > - Updates: [AERO UNITY](https://t.me/Aero_Unity)
