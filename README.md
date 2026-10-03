@@ -329,7 +329,7 @@ https://your-render-app.onrender.com
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 > [!NOTE]
-
+>
 > **Koyeb availability, free-tier eligibility and resource limits depend on its current plans.**
 > **A successful deployment does not guarantee 24/7 operation on every plan.**
 
@@ -432,7 +432,7 @@ git clone YOUR_REPOSITORY_URL
 **Step 2: Open Project Folder**
 
 ```bash
-cd premium-movie-bot
+cd MD-Premium-Movie-Bot
 ```
 
 **Step 3: Create Virtual Environment**
@@ -464,6 +464,7 @@ python bot.py
 ```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### Linux / Termux Deployment
 
 ```bash
@@ -477,7 +478,7 @@ pkg install python git -y
 git clone YOUR_REPOSITORY_URL
 
 # Enter directory
-cd premium-movie-bot
+cd MD-Premium-Movie-Bot
 
 # Install requirements
 pip install -r requirements.txt
