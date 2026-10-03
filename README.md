@@ -127,9 +127,7 @@ optimize - Optimize database [Owner only]
 Welcome to the development documentation of **MD Premium Movie Bot**.
 
 > [!IMPORTANT]
-> **This section contains the repository structure, environment configuration, database information, installation instructions, and deployment methods.**
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+> This section contains the repository structure, environment configuration, database information, installation instructions, and deployment 
 
 **Structure Of Repo** 
 
@@ -225,15 +223,10 @@ TMDB_API_KEY=YOUR_TMDB_API_KEY
 UPDATES_CHANNEL=Aero_Unity
 UPDATES_URL=https://t.me/Aero_Unity
 ```
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
-> [!NOTE]
-> **⚠️ Never publish your actual credentials on GitHub.**
-
 </details>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+> [!NOTE]
+> ⚠️ Never publish your actual credentials on GitHub
 
 ## 🚀 DEPLOYMENT
 
@@ -254,45 +247,33 @@ UPDATES_URL=https://t.me/Aero_Unity
 > 6. Configure the settings below.
 > 7. Add environment variables.
 > 8. Click Deploy Web Service.
-
 > **Use these settings while deploying on Render:**
-
 > - Runtime: `Docker`
 > - Build Command: `pip install -r requirements.txt`
 > - Start Command: `python bot.py`
-
 > **Keep Bot Alive 24/7 Using UptimeRobot**
-
 > **Go to**: https://uptimerobot.com/
-
 > Click: **Add New Monitor**
-
 > Use these settings 👇
-
-
-| Setting | Value |
-|---|---|
-| Monitor Type | HTTP(s) |
-| Friendly Name | Premium-Movie-Bot |
-| URL (or IP) | Your Render App URL |
-| Monitoring Interval | Every 5 minutes |
-| Monitor Timeout | 1 second |
-
+> | Setting | Value |
+> |---|---|
+> | Monitor Type | HTTP(s) |
+> | Friendly Name | Premium-Movie-Bot |
+> | URL (or IP) | Your Render App URL |
+> | Monitoring Interval | Every 5 minutes |
+> | Monitor Timeout | 1 second |
 > URL
 
 ```text
 https://your-render-app.onrender.com
 ```
-
 > After adding monitor click: **Create Monitor**
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 > [!IMPORTANT]
-> **Your Render application must have a working HTTP health endpoint.**
-> **UptimeRobot monitoring does not guarantee uninterrupted uptime.**
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+> Your Render application must have a working HTTP health endpoint.
+> UptimeRobot monitoring does not guarantee uninterrupted uptime.
 
 ### — 「 DEPLOY ON KOYEB 」 —
 
@@ -312,7 +293,6 @@ https://your-render-app.onrender.com
 > 7. Select Docker deployment.
 > 8. Configure your environment variables.
 > 9. Click Deploy.
-
 > **Requirements To Add In Koyeb**
 > - Runtime: Docker
 > - Deployment: Web Service
@@ -323,10 +303,8 @@ https://your-render-app.onrender.com
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 > [!NOTE]
-> **Koyeb availability, free-tier eligibility and resource limits depend on its current plans.**
-> **A successful deployment does not guarantee 24/7 operation on every plan.**
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+> Koyeb availability, free-tier eligibility and resource limits depend on its current plans.
+> A successful deployment does not guarantee 24/7 operation on every plan.
 
 **🖥️ DEPLOY ON VPS**
 
@@ -479,12 +457,8 @@ pip install -r requirements.txt
 python bot.py
 ```
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
 > [!NOTE]
-> **Local deployment runs only while your device is powered on and the bot process remains active.**
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+> Local deployment runs only while your device is powered on and the bot process remains active.
 
 ## 📌 Deployment Summary
 
@@ -497,7 +471,7 @@ python bot.py
 | Linux | Python | While running |
 | Termux | Python | While device is active |
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+</details>
 
 > [!CAUTION]
 > - Never share your BOT_TOKEN.
@@ -506,8 +480,6 @@ python bot.py
 > - Keep your TMDB API key private.
 > - Use environment variables.
 > - Restrict owner commands to authorized users.
-
-</details>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
