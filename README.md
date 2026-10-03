@@ -127,8 +127,7 @@ optimize - Optimize database [Owner only]
 Welcome to the development documentation of **MD Premium Movie Bot**.
 
 > [!IMPORTANT]
-> This section contains the repository structure, environment configuration, database information, installation instructions, and deployment 
-
+> This section contains the repository structure, environment configuration, database information, installation instructions, and deployment.
 **Structure Of Repo** 
 
 ```text
@@ -226,7 +225,7 @@ UPDATES_URL=https://t.me/Aero_Unity
 </details>
 
 > [!NOTE]
-> ⚠️ Never publish your actual credentials on GitHub
+> ⚠️ Never publish your actual credentials on GitHub.
 
 ## 🚀 DEPLOYMENT
 
@@ -238,7 +237,7 @@ UPDATES_URL=https://t.me/Aero_Unity
   </a>
 </p>
 
-> [!TIP] 
+> [!TIP]
 > 1. Fork this repository.
 > 2. Open Render.
 > 3. Click New +.
@@ -247,16 +246,21 @@ UPDATES_URL=https://t.me/Aero_Unity
 > 6. Configure the settings below.
 > 7. Add environment variables.
 > 8. Click Deploy Web Service.
-> Use these settings while deploying on Render
+>
+> Use these settings while deploying on Render:
 > - Runtime: `Docker`
 > - Build Command: `pip install -r requirements.txt`
 > - Start Command: `python bot.py`
+>
 > **Keep Bot Alive 24/7 Using UptimeRobot**
-> **Go to**: https://uptimerobot.com/
+>
+> **Go to:** https://uptimerobot.com/
+>
 > Click: **Add New Monitor**
+>
 > After adding monitor click: **Create Monitor**
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > Your Render application must have a working HTTP health endpoint.
 > UptimeRobot monitoring does not guarantee uninterrupted uptime.
 
@@ -268,7 +272,7 @@ UPDATES_URL=https://t.me/Aero_Unity
   </a>
 </p>
 
-> [!TIP] 
+> [!TIP]
 > 1. Fork this repository.
 > 2. Open [Koyeb](https://app.koyeb.com/).
 > 3. Sign in with your GitHub account.
@@ -278,6 +282,7 @@ UPDATES_URL=https://t.me/Aero_Unity
 > 7. Select Docker deployment.
 > 8. Configure your environment variables.
 > 9. Click Deploy.
+>
 > **Requirements To Add In Koyeb**
 > - Runtime: Docker
 > - Deployment: Web Service
@@ -285,7 +290,7 @@ UPDATES_URL=https://t.me/Aero_Unity
 > - Environment Variables: Required
 > - MongoDB: Required
 
-> [!NOTE] 
+> [!NOTE]
 > Koyeb availability, free-tier eligibility and resource limits depend on its current plans.
 > A successful deployment does not guarantee 24/7 operation on every plan.
 
@@ -440,7 +445,7 @@ pip install -r requirements.txt
 python bot.py
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > Local deployment runs only while your device is powered on and the bot process remains active.
 
 ## 📌 Deployment Summary
