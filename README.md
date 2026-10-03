@@ -128,12 +128,11 @@ Welcome to the development documentation of **MD Premium Movie Bot**.
 
 > [!IMPORTANT]
 
-> This section contains the repository structure, environment configuration, database information, installation instructions, and deployment methods.
+> **This section contains the repository structure, environment configuration, database information, installation instructions, and deployment methods.**
 
->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-##Structure Of Repo 
+**Structure Of Repo** 
 
 ```text
 MD-Premium-Movie-Bot/
@@ -232,9 +231,7 @@ UPDATES_URL=https://t.me/Aero_Unity
 
 > [!NOTE]
 
-> ⚠️ Never publish your actual credentials on GitHub.
-
->
+> **⚠️ Never publish your actual credentials on GitHub.**
 
 </details>
 
@@ -250,7 +247,7 @@ UPDATES_URL=https://t.me/Aero_Unity
   </a>
 </p>
 
-> [!TIPS]
+> [!TIP]
 
 > 1. Fork this repository.
 > 2. Open Render.
@@ -266,8 +263,6 @@ UPDATES_URL=https://t.me/Aero_Unity
 > - Runtime: `Docker`
 > - Build Command: `pip install -r requirements.txt`
 > - Start Command: `python bot.py`
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 > **Keep Bot Alive 24/7 Using UptimeRobot**
 
@@ -294,6 +289,8 @@ https://your-render-app.onrender.com
 
 > After adding monitor click: **Create Monitor**
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 > [!IMPORTANT]
 
 > **Your Render application must have a working HTTP health endpoint.**
@@ -310,7 +307,7 @@ https://your-render-app.onrender.com
   </a>
 </p>
 
-> [!TIPS]
+> [!TIP]
 
 > 1. Fork this repository.
 > 2. Open [Koyeb](https://app.koyeb.com/).
@@ -466,6 +463,7 @@ Create a `.env` file and add your required credentials.
 python bot.py
 ```
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### Linux / Termux Deployment
 
 ```bash
@@ -491,6 +489,7 @@ python bot.py
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 > [!NOTE]
+
 > **Local deployment runs only while your device is powered on and the bot process remains active.**
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
@@ -534,7 +533,7 @@ python bot.py
 
 ## ⭐ Fork and ⭐ this repo
 
-**If you like this bot, give it a ⭐ on GitHub to support the project!**
+If you like this bot, give it a ⭐ on GitHub to support the project!
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:6A00FF,100:00C8FF&height=120&section=footer"/>
