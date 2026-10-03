@@ -126,11 +126,14 @@ optimize - Optimize database [Owner only]
 
 Welcome to the development documentation of **MD Premium Movie Bot**.
 
-This section contains the repository structure, environment configuration, database information, installation instructions, and deployment methods.
+> [!IMPORTANT]
 
+> This section contains the repository structure, environment configuration, database information, installation instructions, and deployment methods.
+
+>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
->[!STRUCTURE]
+##Structure Of Repo 
 
 ```text
 MD-Premium-Movie-Bot/
@@ -231,6 +234,8 @@ UPDATES_URL=https://t.me/Aero_Unity
 
 > ⚠️ Never publish your actual credentials on GitHub.
 
+>
+
 </details>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
@@ -245,36 +250,33 @@ UPDATES_URL=https://t.me/Aero_Unity
   </a>
 </p>
 
-### Deployment Steps
+> [!TIPS]
 
-1. Fork this repository.
-2. Open Render.
-3. Click New +.
-4. Select Web Service.
-5. Connect your GitHub repository.
-6. Configure the settings below.
-7. Add environment variables.
-8. Click Deploy Web Service.
+> 1. Fork this repository.
+> 2. Open Render.
+> 3. Click New +.
+> 4. Select Web Service.
+> 5. Connect your GitHub repository.
+> 6. Configure the settings below.
+> 7. Add environment variables.
+> 8. Click Deploy Web Service.
 
-### Render Settings
+> **Use these settings while deploying on Render:**
 
-Use these settings while deploying on Render:
+> - Runtime: `Docker`
+> - Build Command: `pip install -r requirements.txt`
+> - Start Command: `python bot.py`
 
-- Runtime: `Docker`
-- Build Command: `pip install -r requirements.txt`
-- Start Command: `python bot.py`
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
----
+> **Keep Bot Alive 24/7 Using UptimeRobot**
 
-## 🌐 Keep Bot Alive 24/7 Using UptimeRobot
+> **Go to**: https://uptimerobot.com/
 
-Go to: https://uptimerobot.com/
+> Click: **Add New Monitor**
 
-Click: **Add New Monitor**
+> Use these settings 👇
 
-Use these settings 👇
-
-### Monitor Settings
 
 | Setting | Value |
 |---|---|
@@ -284,21 +286,21 @@ Use these settings 👇
 | Monitoring Interval | Every 5 minutes |
 | Monitor Timeout | 1 second |
 
-### URL
+> URL
 
 ```text
 https://your-render-app.onrender.com
 ```
 
-After adding monitor click: **Create Monitor**
+> After adding monitor click: **Create Monitor**
 
-### Important
+> [!IMPORTANT]
 
-Your Render application must have a working HTTP health endpoint.
+> **Your Render application must have a working HTTP health endpoint.**
 
-UptimeRobot monitoring does not guarantee uninterrupted uptime.
+> **UptimeRobot monitoring does not guarantee uninterrupted uptime.**
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### — 「 DEPLOY ON KOYEB 」 —
 
@@ -308,33 +310,37 @@ UptimeRobot monitoring does not guarantee uninterrupted uptime.
   </a>
 </p>
 
-### Koyeb Deployment Steps
+> [!TIPS]
 
-1. Fork this repository.
-2. Open [Koyeb](https://app.koyeb.com/).
-3. Sign in with your GitHub account.
-4. Click Create App.
-5. Select GitHub as deployment source.
-6. Choose your Premium Movie Bot repository.
-7. Select Docker deployment.
-8. Configure your environment variables.
-9. Click Deploy.
+> 1. Fork this repository.
+> 2. Open [Koyeb](https://app.koyeb.com/).
+> 3. Sign in with your GitHub account.
+> 4. Click Create App.
+> 5. Select GitHub as deployment source.
+> 6. Choose your Premium Movie Bot repository.
+> 7. Select Docker deployment.
+> 8. Configure your environment variables.
+> 9. Click Deploy.
 
-### Koyeb Requirements
+> **Requirements To Add In Koyeb**
+> - Runtime: Docker
+> - Deployment: Web Service
+> - Dockerfile: Required
+> - Environment Variables: Required
+> - MongoDB: Required
 
-- Runtime: Docker
-- Deployment: Web Service
-- Dockerfile: Required
-- Environment Variables: Required
-- MongoDB: Required
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-**Note:** Koyeb availability, free-tier eligibility and resource limits depend on its current plans. A successful deployment does not guarantee 24/7 operation on every plan.
+> [!NOTE]
 
----
+> **Koyeb availability, free-tier eligibility and resource limits depend on its current plans.**
+> **A successful deployment does not guarantee 24/7 operation on every plan.**
 
-## 🖥️ DEPLOY ON VPS
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-You can deploy Premium Movie Bot on any Linux VPS.
+**🖥️ DEPLOY ON VPS**
+
+**You can deploy Premium Movie Bot on any Linux VPS.**
 
 ### Requirements
 
@@ -409,7 +415,7 @@ screen -r premium-movie-bot
 
 ## 💻 RUN LOCALLY
 
-You can also run Premium Movie Bot directly on your computer.
+**You can also run Premium Movie Bot directly on your computer.**
 
 ### Requirements
 
@@ -482,9 +488,12 @@ pip install -r requirements.txt
 python bot.py
 ```
 
-**Note:** Local deployment runs only while your device is powered on and the bot process remains active.
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
----
+> [!NOTE]
+> **Local deployment runs only while your device is powered on and the bot process remains active.**
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ## 📌 Deployment Summary
 
@@ -496,56 +505,36 @@ python bot.py
 | Local Windows | Python | While running |
 | Linux | Python | While running |
 | Termux | Python | While device is active |
-
----
-
-## 🗄️ Database Information
-
-**Database:** MongoDB
-
-**Database Name:** `premium_movie_bot`
-
-```text
-premium_movie_bot
-│
-├── users
-├── media
-├── search_sessions
-├── settings
-├── chats
-├── redeem_codes
-├── banned_users
-└── admins
 ```
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## 🛡️ Security
+> [!CAUTION]
 
-- Never share your BOT_TOKEN.
-- Keep API_HASH private.
-- Never expose MONGO_URI.
-- Keep your TMDB API key private.
-- Use environment variables.
-- Restrict owner commands to authorized users.
+> - Never share your BOT_TOKEN.
+> - Keep API_HASH private.
+> - Never expose MONGO_URI.
+> - Keep your TMDB API key private.
+> - Use environment variables.
+> - Restrict owner commands to authorized users.
 
 </details>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## 👨‍💻 Credits
+> [!WARNING]
 
-**DON'T REMOVE MY CREDIT...**
+> **DON'T REMOVE MY CREDIT...**
 
-- Developer: [MOHAMMED](https://github.com/MohammedDev-yt)
-- Updates: [AERO UNITY](https://t.me/Aero_Unity)
-- Support: [CODERS GROUP](https://t.me/Coders_Grp)
+> - Developer: [MOHAMMED](https://github.com/MohammedDev-yt)
+> - Updates: [AERO UNITY](https://t.me/Aero_Unity)
+> - Support: [CODERS GROUP](https://t.me/Coders_Grp)
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ## ⭐ Fork and ⭐ this repo
 
-If you like this bot, give it a ⭐ on GitHub to support the project!
+**If you like this bot, give it a ⭐ on GitHub to support the project!**
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:6A00FF,100:00C8FF&height=120&section=footer"/>
