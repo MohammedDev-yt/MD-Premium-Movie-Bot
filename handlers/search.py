@@ -730,9 +730,22 @@ def search_result_buttons(
 # ------------------------ #
 # Don't Remove My Credits
 # Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
+# Updates: @Aero_Unity
+# Support : @Coders_Grp
 # ------------------------ #
+
+def get_requester_details(user):
+    """Return the actual Telegram user's display name and ID."""
+
+    if not user:
+        return None, "User"
+
+    if user.username:
+        name = f"@{user.username}"
+    else:
+        name = user.first_name or "User"
+
+    return user.id, name
 
 # ============================================================
 # SEARCH TEXT
@@ -782,7 +795,7 @@ def build_search_text(
         f"<b>›› ʀᴇsᴜʟᴛ ɪɴ :</b> "
         f"{search_time:.2f} Sᴇᴄᴏɴᴅs\n"
 
-        f"<b>›› Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {requested_by}</b>\n"
+        f"<b>›› Rᴇǫᴜᴇsᴛᴇᴅ Bʏ :</b> {requested_by}\n"
         
         f"<b>›› Pᴏᴡᴇʀᴇᴅ Bʏ:</b> "
         f"<b>@Aero_Unity</b>\n\n"
@@ -2474,13 +2487,20 @@ async def refresh_filtered_results(
         page=page,
         filters_data=filters_data
     )
+ 
+    requested_by_id, requested_by_name = get_requester_details(
+        message.from_user
+    )
 
     text = build_search_text(
         query=query,
         results=results,
         page=page,
         has_next=has_next,
-        filters_data=filters_data
+        filters_data=filters_data,
+        search_time=0,
+        requested_by_id=requested_by_id,
+        requested_by_name=requested_by_name
     )
 
     keyboard = search_result_buttons(
@@ -3619,13 +3639,20 @@ def register_search_handlers(app):
             # ------------------------------------------------
             # BUILD RESULT TEXT
             # ------------------------------------------------
+            
+            requested_by_id, requested_by_name = get_requester_details(
+                callback.from_user
+            )
 
             text = build_search_text(
                 query=query,
                 results=results,
                 page=0,
                 has_next=has_next,
-                filters_data=current_filters
+                filters_data=current_filters,
+                search_time=0,
+                requested_by_id=requested_by_id,
+                requested_by_name=requested_by_name
             )
 
             # ------------------------------------------------
@@ -3699,12 +3726,20 @@ def register_search_handlers(app):
 
                 return
 
+            
+            requested_by_id, requested_by_name = get_requester_details(
+                callback.from_user
+            )
+            
             text = build_search_text(
                 query=query,
                 results=results,
                 page=0,
                 has_next=has_next,
-                filters_data=current_filters
+                filters_data=current_filters,
+                search_time=0,
+                requested_by_id=requested_by_id,
+                requested_by_name=requested_by_name
             )
 
             keyboard = search_result_buttons(
@@ -3839,8 +3874,6 @@ def register_search_handlers(app):
 
         sent = 0
         failed = 0
-
-        # Store all sent messages so we can delete them later
         sent_messages = []
 
         for item in results:
@@ -3877,36 +3910,19 @@ def register_search_handlers(app):
                     e
                 )
 
-        # --------------------------------------------------------
-        # DELETE SENDING STATUS
-        # --------------------------------------------------------
-
         try:
             await status_message.delete()
         except Exception:
             pass
 
-        # --------------------------------------------------------
-        # WARNING MESSAGE
-        # --------------------------------------------------------
-
         warning_message = await callback.message.reply_text(
-            "⚠️ Wᴀʀɴɪɴɢ\n\n"
-            "📥 Pʟᴇᴀsᴇ sᴀᴠᴇ ᴛʜᴇ ғɪʟᴇs ᴀʙᴏᴠᴇ ᴛᴏ ʏᴏᴜʀ "
-            "Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs ғᴏʀ ʟᴀᴛᴇʀ ᴜsᴇ.\n\n"
-            "⚠️ Tʜᴇ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 5 ᴍɪɴᴜᴛᴇs.\n\n"
-            "💾 Sᴀᴠᴇ ᴛʜᴇᴍ ɴᴏᴡ."
+            "<b>⚠️ Wᴀʀɴɪɴɢ</b>\n\n"
+            "<b>›› Pʟᴇᴀsᴇ sᴀᴠᴇ ᴛʜᴇ ғɪʟᴇs ᴀʙᴏᴠᴇ ᴛᴏ ʏᴏᴜʀ "
+            "Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs ғᴏʀ ʟᴀᴛᴇʀ ᴜsᴇ.</b>\n\n"
+            "<b>⚠️ Tʜᴇ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 5 ᴍɪɴᴜᴛᴇs.</b>\n\n"
         )
 
-        # --------------------------------------------------------
-        # WAIT 5 MINUTES
-        # --------------------------------------------------------
-
         await asyncio.sleep(300)
-
-        # --------------------------------------------------------
-        # DELETE ALL SENT FILES
-        # --------------------------------------------------------
 
         for sent_message in sent_messages:
  
@@ -3915,10 +3931,6 @@ def register_search_handlers(app):
 
             except Exception:
                 pass
-
-        # --------------------------------------------------------
-        # DELETE WARNING
-        # --------------------------------------------------------
 
         try:
             await warning_message.delete()
@@ -3932,10 +3944,6 @@ def register_search_handlers(app):
 # Updates: @Aero_Unity 
 # Support : @Coders_Grp 
 # ------------------------ #
-
-    # ========================================================
-    # CLEAR FILTERS
-    # ========================================================
 
     @app.on_callback_query(
         filters.regex(
@@ -3984,13 +3992,20 @@ def register_search_handlers(app):
             page=0,
             filters_data={}
         )
+        
+        requested_by_id, requested_by_name = get_requester_details(
+            callback.from_user
+        )
 
         text = build_search_text(
             query=query,
             results=results,
             page=0,
             has_next=has_next,
-            filters_data={}
+            filters_data={},
+            search_time=0,
+            requested_by_id=requested_by_id,
+            requested_by_name=requested_by_name
         )
 
         keyboard = search_result_buttons(
@@ -4081,15 +4096,22 @@ def register_search_handlers(app):
             page=0,
             filters_data=filters_data
         )
+        
+        requested_by_id, requested_by_name = get_requester_details(
+            callback.from_user
+        )
 
         text = build_search_text(
             query=query,
             results=results,
             page=0,
             has_next=has_next,
-            filters_data=filters_data
+            filters_data=filters_data,
+            search_time=0,
+            requested_by_id=requested_by_id,
+            requested_by_name=requested_by_name
         )
-
+        
         keyboard = search_result_buttons(
             results=results,
             session_id=session_id,
@@ -4125,10 +4147,6 @@ def register_search_handlers(app):
 # Updates: @Aero_Unity 
 # Support : @Coders_Grp 
 # ------------------------ #
-
-    # ========================================================
-    # CLOSE SEARCH
-    # ========================================================
 
     @app.on_callback_query(
         filters.regex(
@@ -4172,10 +4190,6 @@ def register_search_handlers(app):
 # Support : @Coders_Grp 
 # ------------------------ #
 
-    # ========================================================
-    # NO-OP
-    # ========================================================
-
     @app.on_callback_query(
         filters.regex(
             r"^noop$"
@@ -4185,7 +4199,6 @@ def register_search_handlers(app):
         client,
         callback
     ):
-
         await callback.answer()
 
 # ------------------------ #
