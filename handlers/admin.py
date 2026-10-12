@@ -2223,13 +2223,6 @@ def register_admin_handlers(app):
         except Exception:
             pass
 
-# ------------------------ #
-# Don't Remove My Credits
-# Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
-# ------------------------ #
-
     # ========================================================
     # /warn
     # ========================================================
@@ -2594,14 +2587,7 @@ def register_admin_handlers(app):
 
                 except Exception:
                     pass
-
-# ------------------------ #
-# Don't Remove My Credits
-# Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
-# ------------------------ #
-
+  
     # ============================================================
     # /optimize
     # ============================================================
@@ -2695,9 +2681,3 @@ def register_admin_handlers(app):
                 show_alert=True
             )
    
-# ------------------------ #
-# Don't Remove My Credits
-# Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
-# ------------------------ #
