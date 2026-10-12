@@ -2063,28 +2063,6 @@ async def handle_file_deep_link(
             e
         )
 
-    # --------------------------------------------------------
-    # RECORD SEARCH
-    # --------------------------------------------------------
-
-    try:
-
-        await record_search(
-            str(
-                media.get(
-                    "title",
-                    media.get(
-                        "file_name",
-                        ""
-                    )
-                )
-            )
-        )
-
-    except Exception:
-
-        pass
-
     logger.info(
         "FILE SENT SUCCESSFULLY | user=%s | message_id=%s",
         user_id,
@@ -2714,8 +2692,9 @@ def register_search_handlers(app):
             search_time=search_time,
             requested_by_id=user_id,
             requested_by_name=(
-                message.from_user.first_name
-                or "User"
+                f"@{message.from_user.username}"
+                if message.from_user.username
+                else message.from_user.first_name or "User"
             )
         )
 
