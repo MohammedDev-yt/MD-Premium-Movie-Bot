@@ -7,10 +7,6 @@
 
 import logging
 import re
-from datetime import datetime
-
-from motor.motor_asyncio import AsyncIOMotorClient
-from pymongo import ReturnDocument
 
 # ------------------------ #
 # Don't Remove My Credits
@@ -19,6 +15,9 @@ from pymongo import ReturnDocument
 # Support : @Coders_Grp 
 # ------------------------ #
 
+from datetime import datetime
+from motor.motor_asyncio import AsyncIOMotorClient
+from pymongo import ReturnDocument
 from config import (
     MONGO_URI,
     DB_NAME,
@@ -27,6 +26,17 @@ from config import (
 )
 
 logger = logging.getLogger(__name__)
+
+# ------------------------ #
+# Don't Remove My Credits
+# Owner: @Mr_Mohammed_29
+# Updates: @Aero_Unity 
+# Support : @Coders_Grp 
+# ------------------------ #
+
+# ============================================================
+# INDEX HELPER
+# ============================================================
 
 async def ensure_index(
     collection,
@@ -91,13 +101,19 @@ async def ensure_index(
 
         return None
 
+# ------------------------ #
+# Don't Remove My Credits
+# Owner: @Mr_Mohammed_29
+# Updates: @Aero_Unity 
+# Support : @Coders_Grp 
+# ------------------------ #
+
 # ============================================================
 # MONGODB CONNECTION
 # ============================================================
 
 mongo_client = None
 db = None
-
 users_collection = None
 media_collection = None
 search_sessions_collection = None
@@ -106,6 +122,13 @@ chats_collection = None
 redeem_codes_collection = None
 banned_users_collection = None
 admins_collection = None
+
+# ------------------------ #
+# Don't Remove My Credits
+# Owner: @Mr_Mohammed_29
+# Updates: @Aero_Unity 
+# Support : @Coders_Grp 
+# ------------------------ #
 
 # ============================================================
 # CONNECT
@@ -175,7 +198,7 @@ async def init_database():
         "admins"
     ]
 
-        # ========================================================
+    # ========================================================
     # DATABASE INDEXES
     # ========================================================
 
@@ -2497,112 +2520,125 @@ async def remove_fsub_channel(
 # TRENDING
 # ============================================================
 
-async def record_search(
-    query
-):
+def _normalize_trend_query(query):
+    """Normalize search names for trending statistics."""
 
     if not query:
-        return False
+        return ""
 
-    query = str(
+    query = str(query).strip().lower()
+
+    if not query or query.startswith("/"):
+        return ""
+
+    # Convert underscores, hyphens, dots and separators to spaces.
+    query = re.sub(r"[_\-.]+", " ", query)
+
+    # Keep letters, numbers and supported Indic scripts.
+    query = re.sub(
+        r"[^a-z0-9\u0900-\u097f\u0b80-\u0bff\u0c00-\u0c7f\u0d00-\u0d7f\s]",
+        " ",
         query
-    ).strip()
-
-    if not query:
-        return False
-
-    if query.startswith("/"):
-        return False
-
-    await settings_collection.update_one(
-
-        {
-            "_id":
-                "search_trends"
-        },
-
-        {
-            "$inc": {
-
-                f"queries.{query}":
-                    1
-            },
-
-            "$set": {
-
-                "updated_at":
-                    datetime.utcnow()
-            }
-        },
-
-        upsert=True
     )
 
-    return True
+    query = re.sub(r"\s+", " ", query).strip()
+
+    # Remove generic suffixes.
+    removable_suffixes = {
+        "movie",
+        "movies",
+        "film",
+        "films"
+    }
+
+    words = query.split()
+
+    while words and words[-1] in removable_suffixes:
+        words.pop()
+
+    return " ".join(words).strip()
 
 
-async def get_trending_searches(
-    limit=29
-):
+async def record_search(query):
+    """Record a normalized search in MongoDB."""
+
+    normalized_query = _normalize_trend_query(query)
+
+    if not normalized_query:
+        return False
+
+    try:
+        await settings_collection.update_one(
+            {"_id": "search_trends"},
+            {
+                "$inc": {
+                    f"queries.{normalized_query}": 1
+                },
+                "$set": {
+                    "updated_at": datetime.utcnow()
+                }
+            },
+            upsert=True
+        )
+
+        return True
+
+    except Exception as e:
+        logger.warning(
+            "Could not record trending search %r: %s",
+            query,
+            e
+        )
+        return False
+
+
+async def get_trending_searches(limit=29):
+    """Return trending searches as (query, count) tuples."""
+
+    try:
+        limit = max(1, min(int(limit), 100))
+    except (TypeError, ValueError):
+        limit = 29
 
     document = await settings_collection.find_one(
-
-        {
-            "_id":
-                "search_trends"
-        }
+        {"_id": "search_trends"}
     )
 
     if not document:
         return []
 
-    queries = document.get(
-        "queries",
-        {}
-    )
+    queries = document.get("queries", {})
 
-    if not queries:
+    if not isinstance(queries, dict):
         return []
 
-    valid_queries = {}
+    aggregated = {}
 
     for query, count in queries.items():
+        normalized_query = _normalize_trend_query(query)
 
-        query = str(
-            query
-        ).strip()
-
-        if not query:
+        if not normalized_query:
             continue
 
-        if query.startswith("/"):
+        if isinstance(count, bool):
             continue
 
-        if isinstance(
-            count,
-            (int, float)
-        ):
+        if not isinstance(count, (int, float)):
+            continue
 
-            valid_queries[
-                query
-            ] = int(
-                count
-            )
+        count = int(count)
 
-    sorted_queries = sorted(
+        if count <= 0:
+            continue
 
-        valid_queries.items(),
+        aggregated[normalized_query] = (
+            aggregated.get(normalized_query, 0) + count
+        )
 
-        key=lambda item:
-            item[1],
-
-        reverse=True
-    )
-
-    return sorted_queries[
-        :int(limit)
-    ]
-
+    return sorted(
+        aggregated.items(),
+        key=lambda item: (-item[1], item[0])
+    )[:limit]
 
 # ============================================================
 # REDEEM CODES
@@ -3576,12 +3612,6 @@ async def save_admin_settings(
 async def optimize_database():
     """
     Safely optimize MongoDB.
-
-    IMPORTANT:
-    - Never deletes media/movie records.
-    - Cleans only expired search sessions when expires_at exists.
-    - Ensures important indexes exist.
-    - Reports database statistics.
     """
 
     global db
@@ -3630,10 +3660,6 @@ async def optimize_database():
                 "collections_checked"
             ] += 1
 
-    # --------------------------------------------------------
-    # CLEAN EXPIRED SEARCH SESSIONS
-    # --------------------------------------------------------
-
     if search_sessions_collection is not None:
 
         try:
@@ -3664,9 +3690,12 @@ async def optimize_database():
                 "sessions_cleaned"
             ] = 0
 
-    # --------------------------------------------------------
-    # REQUIRED INDEXES
-    # --------------------------------------------------------
+# ------------------------ #
+# Don't Remove My Credits
+# Owner: @Mr_Mohammed_29
+# Updates: @Aero_Unity 
+# Support : @Coders_Grp 
+# ------------------------ #
 
     required_indexes = [
 
@@ -3730,9 +3759,12 @@ async def optimize_database():
         ),
     ]
 
-    # --------------------------------------------------------
-    # CREATE / CHECK INDEXES
-    # --------------------------------------------------------
+# ------------------------ #
+# Don't Remove My Credits
+# Owner: @Mr_Mohammed_29
+# Updates: @Aero_Unity 
+# Support : @Coders_Grp 
+# ------------------------ #
 
     for (
         collection,
@@ -3760,10 +3792,6 @@ async def optimize_database():
                 "indexes_checked"
             ] += 1
 
-    # --------------------------------------------------------
-    # USER STATISTICS
-    # --------------------------------------------------------
-
     try:
 
         if users_collection is not None:
@@ -3784,10 +3812,6 @@ async def optimize_database():
         result[
             "users"
         ] = 0
-
-    # --------------------------------------------------------
-    # CHAT STATISTICS
-    # --------------------------------------------------------
 
     try:
 
@@ -3810,9 +3834,12 @@ async def optimize_database():
             "chats"
         ] = 0
 
-    # --------------------------------------------------------
-    # MEDIA / FILE STATISTICS
-    # --------------------------------------------------------
+# ------------------------ #
+# Don't Remove My Credits
+# Owner: @Mr_Mohammed_29
+# Updates: @Aero_Unity 
+# Support : @Coders_Grp 
+# ------------------------ #
 
     try:
 
@@ -3834,10 +3861,6 @@ async def optimize_database():
         result[
             "files"
         ] = 0
-
-    # --------------------------------------------------------
-    # STORAGE STATISTICS
-    # --------------------------------------------------------
 
     try:
 
@@ -3873,13 +3896,6 @@ async def optimize_database():
         result[
             "storage_mb"
         ] = 0
-
-# ------------------------ #
-# Don't Remove My Credits
-# Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
-# ------------------------ #
 
     logger.info(
         "Database optimization completed: %s",
