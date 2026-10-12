@@ -2078,63 +2078,87 @@ async def handle_file_deep_link(
 # Support : @Coders_Grp 
 # ------------------------ #
 
+# ------------------------ #
+# Don't Remove My Credits
+# Owner: @Mr_Mohammed_29
+# Updates: @Aero_Unity
+# Support : @Coders_Grp
+# ------------------------ #
+
 # ============================================================
-# GET ALL RESULTS FOR SEND ALL
+# GET CURRENT PAGE RESULTS FOR SEND ALL
 # ============================================================
 
 async def get_all_sendall_results(
     query,
-    filters_data=None
+    filters_data=None,
+    page=0
 ):
-    """
-    Fetch ALL matching files from MongoDB.
-
-    Normal search is paginated.
-    Send All must continue through every database page.
-    """
 
     filters_data = filters_data or {}
 
-    all_results = []
-    skip = 0
-    batch_size = 100
+    try:
+        page = max(0, int(page))
+    except (TypeError, ValueError):
+        page = 0
 
-    while True:
-        try:
-            batch = await search_media(
-                query=query,
-                skip=skip,
-                limit=batch_size,
-                filters=filters_data
-            )
+    try:
+        results, _ = await search_movies(
+            query=query,
+            page=page,
+            filters_data=filters_data
+        )
 
-        except Exception as e:
-            logger.error(
-                "SEND ALL DATABASE SEARCH ERROR: %s",
-                e,
-                exc_info=True
-            )
-            break
+        logger.info(
+            "SEND ALL PAGE RESULTS | query=%s | page=%s | "
+            "count=%s | filters=%s",
+            query,
+            page,
+            len(results),
+            filters_data
+        )
 
-        if not batch:
-            break
+        return results
 
-        all_results.extend(batch)
+    except Exception as e:
+        logger.error(
+            "SEND ALL SEARCH ERROR: %s",
+            e,
+            exc_info=True
+        )
+        return []
 
-        # Last batch reached
-        if len(batch) < batch_size:
-            break
+async def get_sendall_page_results(query, filters_data=None, page=0):
+    filters_data = filters_data or {}
 
-        skip += batch_size
+    try:
+        page = max(0, int(page))
+    except (TypeError, ValueError):
+        page = 0
 
-    logger.info(
-        "SEND ALL: %s files found for query=%s filters=%s",
-        len(all_results),
-        query,
-        filters_data
-    )
+    try:
+        results, _ = await search_movies(
+            query=query,
+            page=page,
+            filters_data=filters_data
+        )
 
-    return all_results
+        logger.info(
+            "SEND ALL PAGE | query=%s | page=%s | count=%s",
+            query,
+            page,
+            len(results)
+        )
+
+        return results
+
+    except Exception as e:
+        logger.error(
+            "SEND ALL PAGE SEARCH ERROR: %s",
+            e,
+            exc_info=True
+        )
+        return []
 
 # ============================================================
 # SEND ALL DEEP LINK
@@ -2155,17 +2179,9 @@ async def handle_sendall_deep_link(
 
         user_id = message.from_user.id
 
-    # --------------------------------------------------------
-    # PRIVATE ONLY
-    # --------------------------------------------------------
-
     if message.chat.type != enums.ChatType.PRIVATE:
 
         return
-
-    # --------------------------------------------------------
-    # USER
-    # --------------------------------------------------------
 
     await ensure_user(
         client,
@@ -2211,10 +2227,6 @@ async def handle_sendall_deep_link(
 
         return
 
-    # --------------------------------------------------------
-    # GET ORIGINAL SEARCH QUERY
-    # --------------------------------------------------------
-
     query = session.get(
         "query",
         ""
@@ -2231,7 +2243,8 @@ async def handle_sendall_deep_link(
 
     results = await get_all_sendall_results(
         query=query,
-        filters_data=filters_data
+        filters_data=filters_data,
+        page=page
     )
 
     if not results:
