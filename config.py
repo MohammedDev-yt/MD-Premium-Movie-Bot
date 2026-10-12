@@ -11,14 +11,6 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 API_ID = int(os.getenv("API_ID", "0"))
 API_HASH = os.getenv("API_HASH", "")
 DATABASE_CHANNEL_ID = int(os.getenv("DATABASE_CHANNEL_ID", "0"))
-
-# ------------------------ #
-# Don't Remove My Credits
-# Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
-# ------------------------ #
-
 OWNER_ID = int(os.getenv("OWNER_ID", "0"))
 
 ADMIN_IDS = set()
@@ -31,13 +23,6 @@ for admin_id in os.getenv("ADMIN_IDS", "").split(","):
 
 if OWNER_ID:
     ADMIN_IDS.add(OWNER_ID)
-
-# ------------------------ #
-# Don't Remove My Credits
-# Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
-# ------------------------ #
 
 STORAGE_LIMIT_MB = float(
     os.getenv(
@@ -128,22 +113,14 @@ MAX_RESULTS = int(
     os.getenv("MAX_RESULTS", "50")
 )
 
-# ------------------------ #
-# Don't Remove My Credits
-# Owner: @Mr_Mohammed_29
-# Updates: @Aero_Unity 
-# Support : @Coders_Grp 
-# ------------------------ #
-
 DELETE_AFTER = int(
     os.getenv("DELETE_AFTER", "0")
 )
 
-# Number of Telegram messages processed per indexing batch.
-
 INDEX_BATCH_SIZE = int(
     os.getenv("INDEX_BATCH_SIZE", "100")
 )
+
 
 LOG_LEVEL = os.getenv(
     "LOG_LEVEL",
